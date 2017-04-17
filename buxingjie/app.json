@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/article/article"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#c01e2f",
+    "navigationBarTitleText": "虎扑步行街",
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#f6f5f4"
+  }
+}

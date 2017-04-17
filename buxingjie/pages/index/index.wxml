@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<import src="../../template/loading.wxml"/>
+
+<template name="list">
+    <view class="list-item" data-tid="{{tid}}" bindtap="linkTo">
+        <view class="text">
+            <text class="title">{{title}}</text>
+            <view class="text-bottom">
+                <text class="comments">{{time}}</text>
+                <view class="bottom-right">
+                  <text class="recommend" wx:if="{{nps > 0}}">{{nps}}</text>
+                  <text class="lightreply" wx:if="{{lightReply > 0}}">{{lightReply}}</text>
+                  <text class="replies">{{replies}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+
+<view class="page">
+    <view class="tab">
+        <block wx:for="{{tabs}}" wx:key="item">
+            <view class="tab-item {{tabIndex == item.index ? 'active' : ''}}" data-tab="{{item.index}}" bindtap="tabToggle">{{item.name}}</view>
+        </block>
+    </view>
+
+    <view class="container" wx:if="{{tabIndex == 1}}" style="display:{{tabIndex != 1 ? 'none':''}}">
+        <view class="block"></view>
+        <view class="list">
+            <view class="line"></view>
+            <view class="inner">
+                <template is="list" wx:for="{{tab1}}" wx:key="item" data="{{...item}}" />
+            </view>
+        </view>
+    </view>
+
+    <view class="container" wx:esif="{{tabIndex == 2}}" style="display:{{tabIndex != 2 ? 'none':''}}">
+        <view class="block"></view>
+        <view class="list">
+            <view class="line"></view>
+            <view class="inner">
+                <template is="list" wx:for="{{tab2}}" wx:key="item" data="{{...item}}" />
+            </view>
+        </view>
+    </view>
+
+    <view class="container" wx:esif="{{tabIndex == 3}}" style="display:{{tabIndex != 3 ? 'none':''}}">
+        <view class="block"></view>
+        <view class="list">
+            <view class="line"></view>
+            <view class="inner">
+                <template is="list" wx:for="{{tab3}}" wx:key="item" data="{{...item}}" />
+            </view>
+        </view>
+    </view>
+    <template is="loading" wx:if="{{loadingBottom}}" />
+</view>

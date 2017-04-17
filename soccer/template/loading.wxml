@@ -1,0 +1,9 @@
+<template name="loading">
+  <view class="loading">
+      <view class="loader-inner ball-beat">
+          <view class="ball"></view>
+          <view class="ball ball-center"></view>
+          <view class="ball"></view>
+      </view>
+  </view>
+</template>

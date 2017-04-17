@@ -1,0 +1,60 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<import src="../../template/loading.wxml"/>
+
+<!--单条回复内容-->
+<template name="newsItem">
+  <view class="operations-user">
+      <image class="user-avatar" src="{{item.header}}"></image>
+      <view class="user-info">
+          <text class="user-name">{{item.user_name}}</text>
+          <text class="reply-time">{{item.format_time}}</text>
+      </view>
+      <text class="operations">亮了({{item.light_count - item.unlight_count}})</text>
+  </view>
+
+  <view class="reply-content">
+    <view wx:if="{{item.quote_data}}" class="reply-quote-content">
+        <view class="reply-quote-hd">{{item.quote_data.user_name}}</view>
+        <text class="short-quote-content">{{item.quote_data.content}}</text>
+    </view>
+    <text class="short-content">{{item.content}}</text>
+  </view>
+</template>
+
+<view class="news-article">
+  <view class="wxParse">
+    <view class="artical-title">
+      <text class="headline">{{title}}</text>
+      <view class="artical-info">
+           <text class="times">{{addtime}}</text>
+           <text class="news-source" wx:if="news.origin">{{origin}}</text>
+      </view>
+    </view>
+
+    <view class="artical-main-pic">
+    <image class="artical-pic" mode="aspectFill" src="{{headerimg}}"></image>
+    </view>
+
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+  </view>
+
+  <!--亮了-->
+  <view class="reply-container" wx:if="{{lights.length}}">
+    <view class="list-title">这些回复亮了</view>
+
+    <view wx:for="{{lights}}" class="reply-list" wx:key="item">
+        <template is="newsItem" data="{{item}}"/>
+    </view>
+  </view>
+
+  <!--全部回复-->
+  <view class="reply-container" wx:if="{{replys.length}}">
+    <view class="list-title">最新评论</view>
+
+    <view wx:for="{{replys}}" class="reply-list" wx:key="item">
+        <template is="newsItem" data="{{item}}"/>
+    </view>
+  </view>
+
+  <template is="loading" wx:if="{{hasNext}}" />
+</view>

@@ -1,0 +1,116 @@
+page {
+   font-size: 14px;
+   font-family: "Helvetica Neue",Helvetica,sans-serif;
+}
+.artical-title{
+    padding: 10px;
+}
+.headline {
+    padding-bottom: 5px;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: bold;
+    color: #434141;
+}
+.artical-info {
+    color: #a9a9b2;
+    font-size: 14px;
+}
+.news-source {
+    padding-left: 10px;
+}
+
+.artical-main-pic{
+    padding: 10px;
+    text-align: center;
+}
+.artical-pic{
+    width: 100%;
+    margin:0 auto;
+}
+
+.wxParse-p{
+  padding: 8px;
+  word-wrap: break-word;
+  text-align: justify;
+  color: #444444;
+}
+
+.reply-container{
+    margin-top: 10px;
+}
+.reply-list{
+   padding: 10px;
+   border-bottom: 1px solid #e8e8e8;
+}
+.reply-container .reply-list:last-child{
+   border-bottom: none;
+}
+
+.list-title{
+    border-top: 1px solid #eeebeb;
+    border-bottom: 1px solid #eeebeb;
+    border-left: 4px solid #c01e2f;
+    padding-left: 6px;
+    font-size: 16px;
+    line-height: 34px;
+    height: 34px;
+    color: #c01e2f;
+}
+
+
+.operations-user{
+   height: 30px;
+   margin: 5px 8px 0 0;
+   overflow: hidden;
+   display: flex;
+}
+.user-avatar{
+   width: 30px;
+   height: 30px;
+   border-top-left-radius: 999px;
+   border-top-right-radius: 999px;
+   border-bottom-right-radius: 999px;
+   border-bottom-left-radius: 999px;
+   border-radius: 999px;
+   background-clip: padding-box;
+}
+
+.user-info{
+   padding-left: 10px;
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+}
+.user-name{
+   flex:1;
+   line-height: 15px;
+}
+.reply-time{
+   flex:1;
+   line-height: 15px;
+   font-size: 12px;
+   color: #a9a9b2;
+}
+.operations{
+   color: #a9a9b2;
+}
+.reply-content{
+  padding: 7px 0 0 38px;
+  font-size: 16px;
+}
+.short-content{
+  color: #444444;
+  line-height: 1.5;
+}
+.reply-quote-content{
+  padding: 8px;
+  background: #eeebeb;
+  color: #a9a9b3;
+  margin-bottom: 10px;
+}
+
+.reply-quote-content .reply-quote-hd {
+    font-size: 14px;
+    color:#434141
+}
